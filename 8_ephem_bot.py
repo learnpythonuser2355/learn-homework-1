@@ -51,7 +51,6 @@ def talk_to_me(update, context):
 
 def planet(update, context):
     planet = update.message.text.split()[1].lower()
-    print(planet)
     p = planets[planet]
     p.compute(datetime.now())
     update.message.reply_text(ephem.constellation(p))

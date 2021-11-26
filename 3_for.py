@@ -24,16 +24,18 @@ DATAS =   [
 
 def main():
   item_sold_global_summ = 0
-  for d in DATAS:
+  items_sold = 0
+  for data in DATAS:
     item_sold_summ = 0
-    for s in d['items_sold']:
-      item_sold_summ += s
-    average_sold = item_sold_summ/len(d['items_sold'])
-    product_name = d['product']
+    for sold in data['items_sold']:
+      item_sold_summ += sold
+    average_sold = item_sold_summ/len(data['items_sold'])
+    product_name = data['product']
     print(f'всего {product_name} было продано {item_sold_summ}')
     print(f'Среднее количество продаж {product_name}: {average_sold}')
+    items_sold += len(data['items_sold'])
     item_sold_global_summ += item_sold_summ
-  global_average = item_sold_global_summ/36
+  global_average = item_sold_global_summ/items_sold
   print(f'Суммарно было продано {item_sold_global_summ} товаров')
   print(f'В среднем проадавалось {global_average} товаров')
     
