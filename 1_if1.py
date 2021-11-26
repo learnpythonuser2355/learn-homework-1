@@ -14,12 +14,22 @@
 
 """
 
+def get_info(age: int):
+  if age < 7:
+    return 'Детский сад'
+  elif age < 18:
+    return 'Школа'
+  elif age < 23:
+    return 'ВУЗ'
+  else:
+    return 'Работа'
+
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+  age = input('Введите возраст: ')
+  age = int(age)
+  status = get_info(age)
+  print(status)
 
 if __name__ == "__main__":
     main()
